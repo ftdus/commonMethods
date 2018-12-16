@@ -2,7 +2,7 @@
  * @Author: Alvin
  * @Date: 2018-12-16 12:15:22
  * @Last Modified by: Alvin
- * @Last Modified time: 2018-12-15 12:15:22
+ * @Last Modified time: 2018-12-16 12:15:22
  * 实例工具库
  */
 // 浏览器兼容storage
