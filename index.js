@@ -230,4 +230,8 @@ Util.isIE9=function () {
   const UA = inBrowser && window.navigator.userAgent.toLowerCase()
   return UA && UA.indexOf('msie 9.0') > 0
 }
+// 判断函数是宿主环境提供还是自定义
+Util.isNative=function (Ctor) {
+  return typeof Ctor === 'function' && /native code/.test(Ctor.toString())
+}
 export default new Util()
