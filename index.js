@@ -189,4 +189,45 @@ Util.moneyFormat = function (num) {
   num = num.replace(re, "$1,$2");
   return num;
 }
+// 判断浏览版本
+// isFF
+Util.isFF=function () {
+  const UA = inBrowser && window.navigator.userAgent.toLowerCase()
+  return UA && UA.match(/firefox\/(\d+)/)
+}
+// isPhantomJS
+Util.isPhantomJS=function () {
+  const UA = inBrowser && window.navigator.userAgent.toLowerCase()
+  return UA && /phantomjs/.test(UA)
+}
+// isChrome
+Util.isChrome=function () {
+  const UA = inBrowser && window.navigator.userAgent.toLowerCase()
+  return UA && /chrome\/\d+/.test(UA) && !isEdge
+}
+// isIOS
+Util.isIOS=function () {
+  const UA = inBrowser && window.navigator.userAgent.toLowerCase()
+  return (UA && /iphone|ipad|ipod|ios/.test(UA)) || (weexPlatform === 'ios')
+}
+// isAndroid
+Util.isAndroid=function () {
+  const UA = inBrowser && window.navigator.userAgent.toLowerCase()
+  return (UA && UA.indexOf('android') > 0) || (weexPlatform === 'android')
+}
+// isEdge
+Util.isEdge=function () {
+  const UA = inBrowser && window.navigator.userAgent.toLowerCase()
+  return UA && UA && UA.indexOf('edge/') > 0
+}
+// isIE
+Util.isIE=function () {
+  const UA = inBrowser && window.navigator.userAgent.toLowerCase()
+  return UA && /msie|trident/.test(UA)
+}
+// isIE9
+Util.isIE9=function () {
+  const UA = inBrowser && window.navigator.userAgent.toLowerCase()
+  return UA && UA.indexOf('msie 9.0') > 0
+}
 export default new Util()
